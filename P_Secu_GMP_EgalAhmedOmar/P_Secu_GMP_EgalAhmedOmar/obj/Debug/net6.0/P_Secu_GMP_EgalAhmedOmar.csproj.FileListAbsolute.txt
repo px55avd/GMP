@@ -1,0 +1,15 @@
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\bin\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.exe
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\bin\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.deps.json
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\bin\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.runtimeconfig.json
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\bin\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.dll
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\bin\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.pdb
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.csproj.AssemblyReference.cache
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.GeneratedMSBuildEditorConfig.editorconfig
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.AssemblyInfoInputs.cache
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.AssemblyInfo.cs
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.csproj.CoreCompileInputs.cache
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.dll
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\refint\P_Secu_GMP_EgalAhmedOmar.dll
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.pdb
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\P_Secu_GMP_EgalAhmedOmar.genruntimeconfig.cache
+D:\P_Secu_CSR-Schaffter\P_Secu_GMP_EgalAhmedOmar\P_Secu_GMP_EgalAhmedOmar\obj\Debug\net6.0\ref\P_Secu_GMP_EgalAhmedOmar.dll
