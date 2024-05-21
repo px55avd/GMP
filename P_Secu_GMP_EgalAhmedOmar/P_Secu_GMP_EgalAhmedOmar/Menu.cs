@@ -125,46 +125,68 @@ namespace P_Secu_GMP_EgalAhmedOmar
         {
 
             string choice;
-            do
-            {
+            string line;
+            int i = 0;
+            int j = 1;
+
+
                 Console.Clear();
                 Console.WriteLine("******************************************************************");
                 Console.WriteLine("Consulter un mot de passe");
                 Console.WriteLine("1. Retour au menu principal");
 
-                //Ouvre un lecteur pour lire le fichier txt
-                using ( StreamReader sr = new StreamReader(pathSpe))
-                 {
-                    try
-                    {
-                        //Vérifie si le fichier n'existe pas 
-                        if (!File.Exists(pathSpe))
+            do{ 
+                    //Ouvre un lecteur pour lire le fichier txt
+                    using ( StreamReader sr = new StreamReader(pathSpe))
+                     {
+                        try
                         {
-                            Console.WriteLine("Le fichier n'a pas été trouvé !");
+                            //Vérifie si le fichier n'existe pas 
+                            if (!File.Exists(pathSpe))
+                            {
+                                Console.WriteLine("Le fichier n'a pas été trouvé !");
+                            }
+
+                            //TODO: créer un modulo 3 pour récuper seulemt le nom du site et ensuite les récupérer pour les voir ou les modifier.
+                        
+
+
+                            // Read and display lines from the file until the end of
+                            // the file is reached.
+                            while ((line = sr.ReadLine()) != null)
+                            {
+
+                                if(i % 3== 0)
+                                {
+                                    //
+                                    j++;
+
+                                    //
+                                    Console.WriteLine($"{j}. {A.DeceasarAlgo(line)}");
+
+                                }
+
+                                i++;
+                            }
+                        
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("The process failed: {0}", e.ToString());
                         }
 
-                        //TODO: créer un modulo 3 pour récuper seulemt le nom du site et ensuite les récupérer pour les voir ou les modifier.
-                        
-                        string line;
-
-                        // Read and display lines from the file until the end of
-                        // the file is reached.
-                        while ((line = sr.ReadLine()) != null)
-                        {
-                            Console.WriteLine(line);
-                        }
-                        
                     }
-                    catch (Exception e)
+                    Console.WriteLine("******************************************************************");
+                    Console.WriteLine("Faites votre choix : ");
+
+                    choice = Console.ReadLine();
+
+
+                    if(choice == "1" )
                     {
-                        Console.WriteLine("The process failed: {0}", e.ToString());
+                        return;
                     }
 
-                }
-                Console.WriteLine("******************************************************************");
-                Console.WriteLine("Faites votre choix : ");
-
-                choice = Console.ReadLine();
 
                 switch (choice)
                 {
@@ -172,10 +194,76 @@ namespace P_Secu_GMP_EgalAhmedOmar
                         // Retourner au menu principal
                         return;
                     default:
-                        Console.WriteLine("Choix invalide, veuillez réessayer.");
+                            DrawPasswordMenuWith(choice);
+                        //Console.WriteLine("Choix invalide, veuillez réessayer.");
                         break;
                 }
-            } while (choice != "1");
+             } while (choice != "1");
+        }
+
+
+
+        private void DrawPasswordMenuWith(string num)
+        {
+
+            
+            string line;
+            int count = 0;
+            int Rightindex = (Convert.ToInt32(num )-1);
+
+            Console.Clear();
+            Console.WriteLine("******************************************************************");
+            Console.WriteLine("1. Retour au menu principal");
+
+            //Ouvre un lecteur pour lire le fichier txt
+            using (StreamReader sr = new StreamReader(pathSpe))
+            {
+                try
+                {
+                    //Vérifie si le fichier n'existe pas 
+                    if (!File.Exists(pathSpe))
+                    {
+                        Console.WriteLine("Le fichier n'a pas été trouvé !");
+                    }
+
+                    //TODO: créer un modulo 3 pour récuper seulemt le nom du site et ensuite les récupérer pour les voir ou les modifier.
+
+                    // Read and display lines from the file until the end of
+                    // the file is reached.
+                    if(Rightindex == 1)
+                    {
+                        while ((line = sr.ReadLine()) != null )
+                        {
+
+                            if (Rightindex *3  +1 >= count - 1 || count !> (Rightindex * 3 + 1) + 2)
+                            {
+                                Console.WriteLine($"{A.DeceasarAlgo(line)}");
+
+                            }
+
+                            count++;
+                        }
+                    }
+                    else
+                    {
+                        while ((line = sr.ReadLine()) != null || count > (Rightindex + 2))
+                        {
+
+                            if (Rightindex >= count - 1)
+                            {
+                                Console.WriteLine($"{A.DeceasarAlgo(line)}");
+
+                            }
+
+                            count++;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("The process failed: {0}", e.ToString());
+                }
+            }
         }
     }
 }

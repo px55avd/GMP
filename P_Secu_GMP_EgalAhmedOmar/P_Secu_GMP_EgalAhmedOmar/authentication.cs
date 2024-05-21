@@ -59,11 +59,11 @@ namespace P_Secu_GMP_EgalAhmedOmar
                 StreamWriter sr = new StreamWriter(path, true);
 
                 //Ecrire les informations dans le fichier texte TODO: y implémenter l'encrypatage
-                sr.WriteLine(authentication.Website);
+                sr.WriteLine(ceasarAlgo(authentication.Website));
 
-                sr.WriteLine(authentication.Username);
+                sr.WriteLine(ceasarAlgo(authentication.Username));
 
-                sr.WriteLine(authentication.Password);
+                sr.WriteLine(ceasarAlgo(authentication.Password));
 
                 sr.Close(); // Ferme le flux de sortie
             }
@@ -132,11 +132,77 @@ namespace P_Secu_GMP_EgalAhmedOmar
         /// <returns>Information chiffrée</returns>
         public string ceasarAlgo(string info)
         {
-            string algo = Console.ReadLine();
+            //numéro de décalage
+            int shift = 2;
+            
+            // Convertir la chaîne d'entrée en un tableau de caractères
+            char[] encrypted = new char[info.Length];
 
-            //TODO: faire l'algo céasar pour chiffer le login et passsword 
+            // Parcourir chaque caractère de la chaîne
+            for (int i = 0; i < info.Length; i++)
+            {
+                // Obtenir le caractère actuel
+                char c = info[i];
 
-            return algo;
+                // Vérifier si le caractère est une lettre majuscule
+                if (char.IsUpper(c))
+                {
+                    // Appliquer le décalage et s'assurer que le résultat reste une lettre majuscule
+                    encrypted[i] = (char)((c + shift - 'A') % 26 + 'A');
+                }
+                // Vérifier si le caractère est une lettre minuscule
+                else if (char.IsLower(c))
+                {
+                    // Appliquer le décalage et s'assurer que le résultat reste une lettre minuscule
+                    encrypted[i] = (char)((c + shift - 'a') % 26 + 'a');
+                }
+                else
+                {
+                    // Si ce n'est pas une lettre, ne pas appliquer de décalage
+                    encrypted[i] = c;
+                }
+            }
+
+            // Convertir le tableau de caractères chiffré en une chaîne et le retourner
+            return new string(encrypted);
+        }
+
+
+        public string DeceasarAlgo(string info)
+        {
+            //numéro de décalage
+            int shift = 2;
+
+            // Convertir la chaîne d'entrée en un tableau de caractères
+            char[] encrypted = new char[info.Length];
+
+            // Parcourir chaque caractère de la chaîne
+            for (int i = 0; i < info.Length; i++)
+            {
+                // Obtenir le caractère actuel
+                char c = info[i];
+
+                // Vérifier si le caractère est une lettre majuscule
+                if (char.IsUpper(c))
+                {
+                    // Appliquer le décalage et s'assurer que le résultat reste une lettre majuscule
+                    encrypted[i] = (char)((c - shift - 'A') % 26 + 'A');
+                }
+                // Vérifier si le caractère est une lettre minuscule
+                else if (char.IsLower(c))
+                {
+                    // Appliquer le décalage et s'assurer que le résultat reste une lettre minuscule
+                    encrypted[i] = (char)((c - shift - 'a') % 26 + 'a');
+                }
+                else
+                {
+                    // Si ce n'est pas une lettre, ne pas appliquer de décalage
+                    encrypted[i] = c;
+                }
+            }
+
+            // Convertir le tableau de caractères chiffré en une chaîne et le retourner
+            return new string(encrypted);
         }
     }
 }
