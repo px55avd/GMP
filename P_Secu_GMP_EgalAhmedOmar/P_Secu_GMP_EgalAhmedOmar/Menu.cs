@@ -17,8 +17,8 @@ namespace P_Secu_GMP_EgalAhmedOmar
     {
         // Création d'une instance de la classe Authentication
         public Authentication A = new Authentication();
-        string path = @"d:\MDP";
-        string pathSpe = $@"d:\MDP\test.txt";// chemin du répertoire à manipuler
+        string path = @"E:\MDP";
+        string pathSpe = $@"E:\MDP\test.txt";// chemin du répertoire à manipuler
 
 
 
@@ -194,7 +194,10 @@ namespace P_Secu_GMP_EgalAhmedOmar
                         // Retourner au menu principal
                         return;
                     default:
+
                             DrawPasswordMenuWith(choice);
+                            i = 0;
+                            j = 1;
                         //Console.WriteLine("Choix invalide, veuillez réessayer.");
                         break;
                 }
@@ -205,65 +208,91 @@ namespace P_Secu_GMP_EgalAhmedOmar
 
         private void DrawPasswordMenuWith(string num)
         {
-
-            
+            string choice;
             string line;
             int count = 0;
-            int Rightindex = (Convert.ToInt32(num )-1);
+            int Rightindex = (Convert.ToInt32(num) - 1);
 
             Console.Clear();
             Console.WriteLine("******************************************************************");
-            Console.WriteLine("1. Retour au menu principal");
+            Console.WriteLine("1. Retour au menu de consultation des mots de passes");
 
-            //Ouvre un lecteur pour lire le fichier txt
-            using (StreamReader sr = new StreamReader(pathSpe))
+
+            do
             {
-                try
+
+
+                //Ouvre un lecteur pour lire le fichier txt
+                using (StreamReader sr = new StreamReader(pathSpe))
                 {
-                    //Vérifie si le fichier n'existe pas 
-                    if (!File.Exists(pathSpe))
+                    try
                     {
-                        Console.WriteLine("Le fichier n'a pas été trouvé !");
-                    }
-
-                    //TODO: créer un modulo 3 pour récuper seulemt le nom du site et ensuite les récupérer pour les voir ou les modifier.
-
-                    // Read and display lines from the file until the end of
-                    // the file is reached.
-                    if(Rightindex == 1)
-                    {
-                        while ((line = sr.ReadLine()) != null )
+                        //Vérifie si le fichier n'existe pas 
+                        if (!File.Exists(pathSpe))
                         {
+                            Console.WriteLine("Le fichier n'a pas été trouvé !");
+                        }
 
-                            if (Rightindex *3  +1 >= count - 1 || count !> (Rightindex * 3 + 1) + 2)
+                        //TODO: créer un modulo 3 pour récuper seulemt le nom du site et ensuite les récupérer pour les voir ou les modifier.
+
+                        // Read and display lines from the file until the end of
+                        // the file is reached.
+                        if (Rightindex == 1)
+                        {
+                            while ((line = sr.ReadLine()) != null)
                             {
-                                Console.WriteLine($"{A.DeceasarAlgo(line)}");
 
+                                    Console.WriteLine($"{A.DeceasarAlgo(line)}");
+
+                                
+
+                                count++;
                             }
+                        }
+                        else
+                        {
+                            while ((line = sr.ReadLine()) != null)
+                            {
 
-                            count++;
+
+                                    Console.WriteLine($"{A.DeceasarAlgo(line)}");
+
+                                
+
+                                count++;
+                            }
                         }
                     }
-                    else
+                    catch (Exception e)
                     {
-                        while ((line = sr.ReadLine()) != null || count > (Rightindex + 2))
-                        {
-
-                            if (Rightindex >= count - 1)
-                            {
-                                Console.WriteLine($"{A.DeceasarAlgo(line)}");
-
-                            }
-
-                            count++;
-                        }
+                        Console.WriteLine("The process failed: {0}", e.ToString());
                     }
+
                 }
-                catch (Exception e)
+
+                Console.WriteLine("******************************************************************");
+                Console.WriteLine("Faites votre choix : ");
+
+                choice = Console.ReadLine();
+
+
+                switch (choice)
                 {
-                    Console.WriteLine("The process failed: {0}", e.ToString());
+                    case "1":
+                        // Retourner au menu principal
+                        Console.Clear();
+                        Console.WriteLine("******************************************************************");
+                        Console.WriteLine("Consulter un mot de passe");
+                        Console.WriteLine("1. Retour au menu principal");
+                        return;
+                    default:
+                        Console.Clear();
+                        return;
+                        //break;
                 }
-            }
+
+
+            } while (choice != "1");
         }
     }
 }

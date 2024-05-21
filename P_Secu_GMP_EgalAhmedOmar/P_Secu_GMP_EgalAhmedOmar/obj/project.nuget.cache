@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3a+5fB+ypeNvzFmfZ1y9fNANzzXuqG1xZaf2orS43xJsgY/BUvff1qeYTZ3XQTZiaf+C0WUloF8m7cZooaAPFg==",
+  "dgSpecHash": "t1he8kut9LTIw4EnXTOFq/BPWzzcQo3CIAp7XntqFXfNcghraWbCbvZB9Be/84fTLv2YfYTdHe9seyd5VCKOcg==",
   "success": true,
-  "projectFilePath": "D:\\P_Secu_CSR-Schaffter\\P_Secu_GMP_EgalAhmedOmar\\P_Secu_GMP_EgalAhmedOmar\\P_Secu_GMP_EgalAhmedOmar.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\P_Secu_CSR-Schaffter\\P_Secu_GMP_EgalAhmedOmar\\P_Secu_GMP_EgalAhmedOmar\\P_Secu_GMP_EgalAhmedOmar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Omar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Omar\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\Omar\\.nuget\\packages\\microsoft.netcore.app.host.win-arm64\\6.0.29\\microsoft.netcore.app.host.win-arm64.6.0.29.nupkg.sha512",
+    "C:\\Users\\Omar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }
