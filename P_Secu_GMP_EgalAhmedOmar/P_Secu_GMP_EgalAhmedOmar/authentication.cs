@@ -25,7 +25,7 @@ namespace P_Secu_GMP_EgalAhmedOmar
 
         private const string _fileName = "test.txt";
 
-        string path = $@"d:\MDP\test.txt";
+        string path = $@"E:\MDP\test.txt";
 
         public Authentication()
         {
@@ -134,36 +134,39 @@ namespace P_Secu_GMP_EgalAhmedOmar
         {
             //numéro de décalage
             int shift = 2;
-            
-            // Convertir la chaîne d'entrée en un tableau de caractères
+
             char[] encrypted = new char[info.Length];
 
-            // Parcourir chaque caractère de la chaîne
             for (int i = 0; i < info.Length; i++)
             {
-                // Obtenir le caractère actuel
                 char c = info[i];
+                int asciiValue = (int)c;
 
-                // Vérifier si le caractère est une lettre majuscule
-                if (char.IsUpper(c))
+                // Vérifier si le caractère est dans la plage des caractères imprimables
+                if (asciiValue >= 32 && asciiValue <= 126)
                 {
-                    // Appliquer le décalage et s'assurer que le résultat reste une lettre majuscule
-                    encrypted[i] = (char)((c + shift - 'A') % 26 + 'A');
-                }
-                // Vérifier si le caractère est une lettre minuscule
-                else if (char.IsLower(c))
-                {
-                    // Appliquer le décalage et s'assurer que le résultat reste une lettre minuscule
-                    encrypted[i] = (char)((c + shift - 'a') % 26 + 'a');
+                    // Appliquer le décalage de César
+                    int newAsciiValue = asciiValue + shift;
+
+                    // Gestion du dépassement de la plage des caractères imprimables
+                    if (newAsciiValue > 126)
+                    {
+                        newAsciiValue = 32 + (newAsciiValue - 127);
+                    }
+                    else if (newAsciiValue < 32)
+                    {
+                        newAsciiValue = 127 - (32 - newAsciiValue);
+                    }
+
+                    encrypted[i] = (char)newAsciiValue;
                 }
                 else
                 {
-                    // Si ce n'est pas une lettre, ne pas appliquer de décalage
+                    // Si ce n'est pas un caractère imprimable, ne pas le modifier
                     encrypted[i] = c;
                 }
             }
 
-            // Convertir le tableau de caractères chiffré en une chaîne et le retourner
             return new string(encrypted);
         }
 
@@ -173,35 +176,38 @@ namespace P_Secu_GMP_EgalAhmedOmar
             //numéro de décalage
             int shift = 2;
 
-            // Convertir la chaîne d'entrée en un tableau de caractères
             char[] encrypted = new char[info.Length];
 
-            // Parcourir chaque caractère de la chaîne
             for (int i = 0; i < info.Length; i++)
             {
-                // Obtenir le caractère actuel
                 char c = info[i];
+                int asciiValue = (int)c;
 
-                // Vérifier si le caractère est une lettre majuscule
-                if (char.IsUpper(c))
+                // Vérifier si le caractère est dans la plage des caractères imprimables
+                if (asciiValue >= 32 && asciiValue <= 126)
                 {
-                    // Appliquer le décalage et s'assurer que le résultat reste une lettre majuscule
-                    encrypted[i] = (char)((c - shift - 'A') % 26 + 'A');
-                }
-                // Vérifier si le caractère est une lettre minuscule
-                else if (char.IsLower(c))
-                {
-                    // Appliquer le décalage et s'assurer que le résultat reste une lettre minuscule
-                    encrypted[i] = (char)((c - shift - 'a') % 26 + 'a');
+                    // Appliquer le décalage de César
+                    int newAsciiValue = asciiValue - shift;
+
+                    // Gestion du dépassement de la plage des caractères imprimables
+                    if (newAsciiValue > 126)
+                    {
+                        newAsciiValue = 32 + (newAsciiValue - 127);
+                    }
+                    else if (newAsciiValue < 32)
+                    {
+                        newAsciiValue = 127 - (32 - newAsciiValue);
+                    }
+
+                    encrypted[i] = (char)newAsciiValue;
                 }
                 else
                 {
-                    // Si ce n'est pas une lettre, ne pas appliquer de décalage
+                    // Si ce n'est pas un caractère imprimable, ne pas le modifier
                     encrypted[i] = c;
                 }
             }
 
-            // Convertir le tableau de caractères chiffré en une chaîne et le retourner
             return new string(encrypted);
         }
     }

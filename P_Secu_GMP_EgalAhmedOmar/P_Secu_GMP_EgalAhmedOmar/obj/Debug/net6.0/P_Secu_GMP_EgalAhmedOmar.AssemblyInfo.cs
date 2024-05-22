@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("P_Secu_GMP_EgalAhmedOmar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e4ef539afe77ffbbcdcafdb6d8a63b20a762053")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8299fd38275bcd9600262a6825241aed7fcbf73d")]
 [assembly: System.Reflection.AssemblyProductAttribute("P_Secu_GMP_EgalAhmedOmar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("P_Secu_GMP_EgalAhmedOmar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

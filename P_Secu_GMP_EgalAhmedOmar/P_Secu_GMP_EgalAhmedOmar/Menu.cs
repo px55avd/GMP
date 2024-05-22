@@ -27,7 +27,7 @@ namespace P_Secu_GMP_EgalAhmedOmar
         /// </summary>
         public Menu()
         {
-            //Vérifie que lw fichier soit créer
+            //Vérifie que le fichier soit créer
             try
             {
                 if (File.Exists(pathSpe))
@@ -237,31 +237,36 @@ namespace P_Secu_GMP_EgalAhmedOmar
 
                         // Read and display lines from the file until the end of
                         // the file is reached.
-                        if (Rightindex == 1)
+
+
+                        // Lire toutes les lignes du fichier
+                        List<string> lines = new List<string>();
+                        while ((line = sr.ReadLine()) != null)
                         {
-                            while ((line = sr.ReadLine()) != null)
-                            {
+                            lines.Add(line);
+                        }
 
-                                    Console.WriteLine($"{A.DeceasarAlgo(line)}");
+                        // Calculer l'index de départ de l'entité
+                        int startIndex = (Rightindex * 3) % lines.Count;
 
-                                
+                        if (startIndex + 2 < lines.Count)
+                        {
+                            // Afficher les informations de l'entité
+                            string website = A.DeceasarAlgo(lines[startIndex]);
+                            string username = A.DeceasarAlgo(lines[startIndex + 1]);
+                            string password = A.DeceasarAlgo(lines[startIndex + 2]);
 
-                                count++;
-                            }
+                            Console.WriteLine($"Site: {website}");
+                            Console.WriteLine($"Login: {username}");
+                            Console.WriteLine($"Password: {password}");
+                            Console.WriteLine("--------------------------------------------------");
                         }
                         else
                         {
-                            while ((line = sr.ReadLine()) != null)
-                            {
-
-
-                                    Console.WriteLine($"{A.DeceasarAlgo(line)}");
-
-                                
-
-                                count++;
-                            }
+                            Console.WriteLine("L'index spécifié est hors des limites.");
                         }
+
+
                     }
                     catch (Exception e)
                     {
